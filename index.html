@@ -3,111 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Psikotes Online</title>
-    <link rel="icon" type="image/png" href="admin.png">
-    <link rel="apple-touch-icon" href="admin.png">
+    <title>Sistem Keamanan Admin</title>
     <style>
-        :root {
-            --bg: #e0e5ec;
-            --shadow-light: #ffffff;
-            --shadow-dark: #a3b1c6;
-            --text: #4a5568;
-            --blue: #3182ce;
-        }
-
-        body {
-            background-color: var(--bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            color: var(--text);
-        }
-
-        .container {
-            text-align: center;
-            padding: 40px 20px;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .header-card {
-            padding: 30px;
-            border-radius: 30px;
-            background: var(--bg);
-            box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
-            margin-bottom: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .menu-card {
-            padding: 30px 20px;
-            border-radius: 25px;
-            background: var(--bg);
-            box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .menu-card:active {
-            box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
-            transform: scale(0.98);
-        }
-
-        .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .title-tes {
-            color: var(--blue);
-            font-size: 18px;
-        }
+        body { background: #0f172a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: #1e293b; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center; width: 320px; border: 1px solid rgba(255,255,255,0.1); }
+        input { width: 100%; padding: 12px; margin: 20px 0; border-radius: 8px; border: none; background: #334155; color: white; text-align: center; }
+        button { background: #6366f1; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; }
+        button:hover { background: #4f46e5; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="header-card">
-            <h1 style="margin: 0; font-size: 24px;">Selamat Datang ADMIN</h1>
-            <p style="margin-top: 10px; font-size: 14px;">Silakan pilih tes yang tersedia di bawah ini:</p>
-        </div>
-
-        <div class="grid">
-            <a href="./A/" class="menu-card">
-                <div class="icon">📝</div>
-                <div class="title-tes">TES A</div>
-            </a>
-
-            <a href="./B/" class="menu-card">
-                <div class="icon">📊</div>
-                <div class="title-tes">TES B</div>
-            </a>
-              <a href="./C/" class="menu-card">
-                <div class="icon">📋</div>
-                <div class="title-tes">TES C</div>
-            </a>
-                <a href="./D/" class="menu-card">
-                <div class="icon">📉</div>
-                <div class="title-tes">TES D</div>
-            </a>
-            
-        </div>
-
-        <p style="margin-top: 50px; font-size: 12px; opacity: 0.7;">&copy; 2026 tes-online.web.id</p>
+    <div class="login-card">
+        <h2>🔒 Restricted Area</h2>
+        <p style="color: #94a3b8; font-size: 14px;">Masukkan kode otorisasi</p>
+        <input type="password" id="pass" placeholder="••••••••">
+        <button onclick="auth()">Verifikasi Access</button>
     </div>
 
+    <script>
+        function auth() {
+            const p = document.getElementById('pass').value;
+            // Password ini sekaligus menjadi NAMA FILE rahasia Anda
+            if (p === 'admin-testonline-2026') { 
+                window.location.href = p + ".html"; 
+            } else {
+                alert('Akses Ditolak: Kode Salah');
+            }
+        }
+    </script>
 </body>
 </html>
