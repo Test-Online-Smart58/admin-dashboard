@@ -23,21 +23,14 @@
 <script>
     function auth() {
         const _0x1a = document.getElementById('pass').value;
-        
-        // Versi tersamar dari 'admin-testonline-2026'
         const _0x2b = "YWRtaW4tdGVzdG9ubGluZS0yMDI2"; 
-        
-        // Mengecek kecocokan tanpa memunculkan teks asli di Inspect Element
-        if (btoa(_0x1a) === _0x2b) { 
-            // Mengarahkan ke [password].html secara rahasia
-            const _0x3c = "\x2e\x68\x74\x6d\x6c"; 
+                if (btoa(_0x1a) === _0x2b) { 
+                const _0x3c = "\x2e\x68\x74\x6d\x6c"; 
             window.location.href = _0x1a + _0x3c; 
         } else {
             alert('\x41\x6b\x73\x65\x73\x20\x44\x69\x74\x6f\x6c\x61\x6b');
         }
     }
-
-    // Tambahan: Blokir klik kanan dan F12 untuk mempersulit Inspect Element
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.onkeydown = e => {
         if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode))) return false;
